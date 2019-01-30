@@ -8,9 +8,10 @@ scroll-behavior: smooth;
 }
 
 main{
-    background: url("resources/images/Hydrangeas.jpg") no-repeat;
+    background: url("../portefolio/resources/images/business-computer-contemporary-669996.jpg") no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    height: fit-content;
 }
 
 .row{
@@ -23,6 +24,14 @@ main{
     width: 100%;
 }
 
+.col-1{
+    width: 8.33%
+}
+
+.col-2{
+    width: 20%;
+} 
+
 .col-3{
     width: 25%;
 }
@@ -30,6 +39,10 @@ main{
 .col-4 {
     width: 33.3%;
     height: 100%;
+}
+
+.col-5{
+    width: 41.66%;
 }
 
 .col-6{
@@ -64,6 +77,7 @@ header{
             color: white;
             font-size: 14px;
             margin-right: 20px;
+            transition: all 0.3s;
         }
 
         header .top-header a:hover{
@@ -73,7 +87,7 @@ header{
     header .bottom-header{
         height: 90%;
         width: 100%;
-        background: url("resources/images/Lighthouse.jpg") no-repeat;
+        background: url("../resources/images/action-blur-close-up-735911.jpg") no-repeat;
         position: relative;
         background-size: cover;
     }
@@ -92,7 +106,7 @@ header{
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            text-shadow: 0px 0px 1px black;
+            text-shadow: 0px 0px 10px black;
         }
 
     /*----- ANIMATION HEADER -----*/
@@ -179,6 +193,7 @@ header{
     padding-bottom: 80px;
     margin-bottom: 200px;
     background-color: white;
+    box-shadow: 1px 1px 30px 1px black;
 }
 
     .container.faded-container{
@@ -200,6 +215,10 @@ header{
     padding-top:150px;
 }
 
+    #introduction .col.medium-text{
+        text-align: center;
+    }
+
 /* Projects */
 .project{
     height: 500px;
@@ -216,7 +235,7 @@ header{
     }
 
     .project .proj-content{
-        margin: 15px 15px 0 0;
+        margin: 15px 50px 0 0;
     }
 
     .proj-cont{
@@ -233,7 +252,7 @@ header{
     height: 100%;
     object-fit: cover;
     filter: blur(3px) contrast(1);
-    background: url("resources/images/Hydrangeas.jpg") no-repeat;
+    background: url("../resources/images/Hydrangeas.jpg") no-repeat;
     background-position: center;
     transition: all 3s;
 }
@@ -255,20 +274,21 @@ header{
 
 footer{
     width: 100%;
-    height: 200px;
-    margin-top: 50px;
+    height: 30px;
     box-shadow: 0px -7px 10px -7px;
 }
 
     footer .contacts{
-        margin: 20px;
-        border-right: 1px solid rgba(0,0,0,0.2);
+        border-right: 1px solid rgba(0,0,0,0.15);
         height: 100%;
+        margin: 20px 0;
     }
 
     footer .links{
         height: 100%;
         font-size: 30px;
+        text-align: right;
+        padding: 0 30px;
     }
 
         footer .contacts span{
@@ -276,7 +296,7 @@ footer{
         }
 
         footer .contacts p{
-            margin-top: 20px;
+           
         }
 
             footer .contacts p.contact-title{
@@ -285,11 +305,11 @@ footer{
             
             footer .contacts div.contact-body{
                 margin-left: 10px;
+                margin: 10px 0 0 10px;
             }
 
         footer .links i{
-            padding-top: 30px;
-            margin-left: 30px;
+            padding-top: 11px;
             text-decoration: none;
             color: black;
             transition: all 0.5s;
@@ -297,4 +317,30 @@ footer{
 
             footer .links i:hover{
                 color:rgba(0,0,0,0.9);
+            }
+
+    footer .author{
+        text-align: center;
+        font-size: 11px;
+        color: rgba(0,0,0,0.7);
+        word-spacing: 2;
+        letter-spacing: 1;
+    }
+
+        footer .author>div>div{
+            width: 600px;
+            margin: 0 auto;
+            padding: 5px 0px;
+            position: relative
+        }
+
+            footer .author>div>div::before{
+                content: "";
+                height: 1px;
+                width: 100%;
+                background: linear-gradient(to right, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0.3) 50%,rgba(0,0,0,0.1) 100%);
+                position: absolute;
+                top: 0;
+                left: 0;
+
             }

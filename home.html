@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="reset.css">
-    <link rel="stylesheet" type="text/css" href="base.css?v=201811141748">
+    <meta name="author" content="Miguel Santos">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/base.css?v=201812131104">
     <!-- JQuery -->
     <script
     src="https://code.jquery.com/jquery-3.3.1.js"
@@ -41,7 +42,8 @@
             </div>
             <div class="row">
                 <div class="col medium-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sodales consequat dolor nec tincidunt. Suspendisse auctor et nisi in ullamcorper. Nam sed tellus mauris. Pellentesque sodales augue ut magna sollicitudin imperdiet. Pellentesque venenatis consequat porttitor. Proin efficitur laoreet auctor. Nullam lectus nulla, commodo in tristique vel, eleifend ac urna. Donec tincidunt a sapien at porttitor. Nam vitae mi pharetra purus aliquet laoreet.
+                    Hi! My name is Miguel Santos and I'm a web developer.
+                     I focus mainly on front-end development, building websites with HTML, CSS and Javascript.
                 </div>
             </div>
         </div>
@@ -74,8 +76,8 @@ Quisque porta commodo quam, at aliquam enim varius sit amet. Interdum et malesua
                                     
                             </div>
                             <div class="proj-img-in">
-                                    <img src="resources/images/Hydrangeas.jpg">
-                                </div>
+                                    <img src="../portefolio/resources/images/Hydrangeas.jpg">
+                            </div>
                         </div>
                     </div>
                     
@@ -106,7 +108,7 @@ Quisque porta commodo quam, at aliquam enim varius sit amet. Interdum et malesua
                                     
                             </div>
                             <div class="proj-img-in">
-                                    <img src="resources/images/Hydrangeas.jpg">
+                                    <img src="../portefolio/resources/images/Hydrangeas.jpg">
                                 </div>
                         </div>
                     </div>
@@ -118,15 +120,13 @@ Quisque porta commodo quam, at aliquam enim varius sit amet. Interdum et malesua
     </main>
     <footer id="contacts">
         <div class="row">
-            <div class="col-6"></div>
-            <div class="col-3 contacts">
-                <p class="contact-title">Contacts</p>
-                <div class="contact-body">
-                        <p><strong>E-mail:</strong> xxxxxxx@xxxx.com</p>
-                </div>  
-            </div>
-            <div class="col-3 links">
+            <div class="col links">
                 <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+        <div class="row author">
+            <div class="col">
+                <div>Miguel Santos 2018</div>
             </div>
         </div>
     </footer>
@@ -134,6 +134,8 @@ Quisque porta commodo quam, at aliquam enim varius sit amet. Interdum et malesua
 </html>
 
     <script type="text/javascript"> 
+
+    $(document).ready(function(){
     //Scroll actions
     $(window).scroll(function(){
             if ($(window).scrollTop() >= 500) {
@@ -165,19 +167,20 @@ Quisque porta commodo quam, at aliquam enim varius sit amet. Interdum et malesua
             $("main").css('background-position-y', parseInt(x / -10) + 'px');
 
             //Second content position
-            var contPos = $(".container:nth-child(2)").position();
-            //First project position
-            //var contPos = $(".project");
+            var contPos2 = $(".container:nth-child(2)").position();
+            //Third content position
+            var contPos3 = $(".container:nth-child(3)").position();
 
             //Change picture while scrolling
-            if(x > contPos.top){
-                $("main").css({'background-image':'url(../portefolio/resources/images/Desert.jpg)',"background-size":"cover"});
+            if(x > contPos2.top && x < contPos3.top){
+                $("main").css({'background-image':'url(../portefolio/resources/images/codes-coding-computer-270366.jpg)',"background-size":"cover"});
+            }else if(x > contPos3.top){
+                $("main").css({'background-image':'url(../portefolio/resources/images/ai-blur-codes-577585.jpg)',"background-size":"cover"});
             }else{
-                $("main").css({'background-image': 'url("../portefolio/resources/images/Hydrangeas.jpg")', "background-size": "cover"});
+                $("main").css({'background-image': 'url("../portefolio/resources/images/business-computer-contemporary-669996.jpg")', "background-size": "cover"});
             }
 
             });
 
-
-        
+        });
             </script>
