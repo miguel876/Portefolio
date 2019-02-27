@@ -18,6 +18,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
     <!-- Font awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <!-- Map line -->
+    <link rel="stylesheet" type="text/css" href="css/mapline.css?v=201812131104">
+    <script src="js/mapline.js" type="text/javascript"></script>
+
     <title>Portefolio</title>
 </head>
 <body>
@@ -47,7 +51,8 @@
                 </div>
             </div>
         </div>
-        <div class="container" id="projects">
+        <section class="proj" id="projects">
+        <div class="container">
             <div class="row introduction">
                 <div class="col big-title">
                     Projects
@@ -76,7 +81,7 @@ Quisque porta commodo quam, at aliquam enim varius sit amet. Interdum et malesua
                                     
                             </div>
                             <div class="proj-img-in">
-                                    <img src="../portefolio/resources/images/Hydrangeas.jpg">
+                                <img src="../portefolio/resources/images/Hydrangeas.jpg">
                             </div>
                         </div>
                     </div>
@@ -108,15 +113,15 @@ Quisque porta commodo quam, at aliquam enim varius sit amet. Interdum et malesua
                                     
                             </div>
                             <div class="proj-img-in">
-                                    <img src="../portefolio/resources/images/Hydrangeas.jpg">
-                                </div>
+                                <img src="../portefolio/resources/images/Hydrangeas.jpg">
+                            </div>
                         </div>
                     </div>
                     
                 </div>
             </div>
         </div>
-        
+    </section>
     </main>
     <footer id="contacts">
         <div class="row">
@@ -136,6 +141,9 @@ Quisque porta commodo quam, at aliquam enim varius sit amet. Interdum et malesua
     <script type="text/javascript"> 
 
     $(document).ready(function(){
+    
+    var setMap = 0;
+    mapLine("project");
     //Scroll actions
     $(window).scroll(function(){
             if ($(window).scrollTop() >= 500) {
@@ -147,9 +155,10 @@ Quisque porta commodo quam, at aliquam enim varius sit amet. Interdum et malesua
                 $(".title-grad").addClass("faded-title-grad");
 
                 //Container
-                $(".container:first-child").addClass("faded-container");
+                $("#introduction").addClass("faded-container");
                 $(".introduction").attr("style","padding-top:80px !important");
                 $("big-title").fadeIn(300);
+
             }else{
                 //Header
                 $("header").removeClass("faded");
@@ -159,7 +168,8 @@ Quisque porta commodo quam, at aliquam enim varius sit amet. Interdum et malesua
                 $(".title-grad").removeClass("faded-title-grad");
 
                 //Container
-                $(".container:first-child").removeClass("faded-container");
+                $("#introduction").removeClass("faded-container");
+
             }
 
             //Move main background image
@@ -167,9 +177,9 @@ Quisque porta commodo quam, at aliquam enim varius sit amet. Interdum et malesua
             $("main").css('background-position-y', parseInt(x / -10) + 'px');
 
             //Second content position
-            var contPos2 = $(".container:nth-child(2)").position();
+            var contPos2 = $(".proj .container:nth-child(1)").position();
             //Third content position
-            var contPos3 = $(".container:nth-child(3)").position();
+            var contPos3 = $(".proj .container:nth-child(2)").position();
 
             //Change picture while scrolling
             if(x > contPos2.top && x < contPos3.top){
